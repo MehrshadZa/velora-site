@@ -6,7 +6,7 @@ const SITE = {
   businessName: "Velora Clinic Marketing",
   phoneDisplay: "(437) 808‑2882",
   phoneTel: "+14378082882",
-  email: "hello@veloramarketing.ca",
+  email: "Velorafrontdesk@gmail.com",
   cityLine: "Toronto & GTA • Healthcare‑focused marketing",
 };
 
