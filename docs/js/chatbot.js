@@ -180,7 +180,13 @@
     }
 
     btn.addEventListener("click", () => (panel.hidden ? open() : close()));
-    header.querySelector(".chatbot-close").addEventListener("click", close);
+
+    const closeBtn = header.querySelector(".chatbot-close");
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      close();
+    });
     sendBtn.addEventListener("click", send);
     inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter") send();
