@@ -105,7 +105,7 @@
 
     const panel = document.createElement("div");
     panel.className = "chatbot-panel";
-    panel.hidden = true;
+    panel.setAttribute("hidden", "");
 
     const header = document.createElement("div");
     header.className = "chatbot-header";
@@ -144,14 +144,16 @@
     const sendBtn = panel.querySelector(".chatbot-send");
 
     function open() {
-      panel.hidden = false;
+      panel.removeAttribute("hidden");
       btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Close chat");
       inputEl.focus();
     }
 
     function close() {
-      panel.hidden = true;
+      panel.setAttribute("hidden", "");
       btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Open chat");
     }
 
     function appendUser(text) {
@@ -179,7 +181,7 @@
       setTimeout(() => appendBot(reply), 300);
     }
 
-    btn.addEventListener("click", () => (panel.hidden ? open() : close()));
+    btn.addEventListener("click", () => (panel.hasAttribute("hidden") ? open() : close()));
 
     const closeBtn = header.querySelector(".chatbot-close");
     closeBtn.addEventListener("click", (e) => {

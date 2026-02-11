@@ -835,11 +835,11 @@ button, input, textarea, select{ font: inherit; }
   }
 }
 
-/* AI Chatbot */
+/* AI Chatbot — positioned above the sticky CTA button */
 #velora-chatbot{
   position: fixed;
   right: clamp(14px, 2vw, 18px);
-  bottom: calc(clamp(14px, 2vw, 18px) + env(safe-area-inset-bottom, 0px));
+  bottom: calc(76px + clamp(14px, 2vw, 18px) + env(safe-area-inset-bottom, 0px));
   z-index: 55;
   font-family: inherit;
 }
@@ -879,6 +879,9 @@ button, input, textarea, select{ font: inherit; }
   flex-direction: column;
   overflow: hidden;
 }
+.chatbot-panel[hidden]{
+  display: none !important;
+}
 .chatbot-header{
   display: flex;
   align-items: center;
@@ -913,6 +916,9 @@ button, input, textarea, select{ font: inherit; }
   align-items: center;
   justify-content: center;
   padding: 0;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
   transition: background .15s ease, color .15s ease;
 }
 .chatbot-close:hover{
@@ -1000,7 +1006,7 @@ button, input, textarea, select{ font: inherit; }
   #velora-chatbot{
     left: var(--pad);
     right: var(--pad);
-    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(104px + env(safe-area-inset-bottom, 0px));
   }
   .chatbot-panel{
     left: 0;
